@@ -1,14 +1,14 @@
 # Vicoart Privacy Policy
 
-**Effective date: 20 September 2026**
+**Effective date: 24 September 2026**
 
-Vicoart respects your privacy and is committed to protecting the information processed when you use the Vicoart mobile application.
+Vicoart respects your privacy and is committed to protecting personal information processed when you use the Vicoart mobile application.
 
-This Privacy Policy explains what information Vicoart processes, why it is processed, how it is handled, and the choices available to users.
+This Privacy Policy explains what information Vicoart processes, why it is processed, how it is handled, the service providers involved, how long information may be retained, and the choices and rights available to users.
 
 Vicoart is currently operated by **Cristian Dumitrache, United Kingdom**.
 
-For privacy-related questions, contact:
+For privacy-related questions:
 
 **privacy@vicoart.com**
 
@@ -18,21 +18,40 @@ For general support:
 
 ## 1. About Vicoart
 
-Vicoart is a wall visualisation application designed to help users preview decorative finishes on real walls.
+Vicoart is a wall visualisation application designed to help users preview decorative finishes on photographs of real walls.
 
-The application allows users to create projects, select or photograph a room image, identify a wall, preview decorative finishes, compare results, and save project variations.
+The application allows users to create an account, create projects, select or photograph a room image, identify and refine a wall selection, preview decorative finishes, compare results, and save project variations locally on their device.
 
-The current version of Vicoart does not require users to create an account.
+Vicoart uses user accounts for authentication and account-related functionality.
+
+Saved Vicoart projects are currently primarily local to the user's device. Vicoart does not currently provide cloud synchronisation of saved projects.
 
 ## 2. Information Vicoart Processes
 
+### Account information
+
+When you create or use a Vicoart account, information associated with your account and authentication may be processed, including:
+
+- your email address;
+- a user or account identifier;
+- authentication and session information;
+- email-confirmation status;
+- information required for password recovery;
+- information required for account security and account deletion.
+
+Vicoart uses Supabase to provide authentication and account-management infrastructure.
+
+Passwords are handled through Supabase Auth. According to Supabase's current documentation, passwords are stored as cryptographic hashes rather than as plain-text passwords.
+
 ### Photos and room images
 
-When you choose a photo or take a photo for use in Vicoart, the image is used to identify the selected wall and generate a decorative finish preview.
+When you choose a photograph from your device or take a photograph for use in Vicoart, the image is used to provide Vicoart's wall-selection and decorative-finish visualisation functionality.
 
-Before an image is uploaded for processing, Vicoart creates a sanitised copy intended to remove image metadata such as EXIF information and GPS location metadata.
+Before a photograph is uploaded for processing, Vicoart creates a sanitised processing copy designed to remove source metadata such as EXIF information, GPS location metadata, XMP data, comments and the original source filename.
 
-Vicoart does not intentionally collect precise location information from your photographs.
+The original photograph in your device gallery is not modified by this sanitisation process.
+
+Vicoart does not intentionally collect precise location information from photographs.
 
 ### Wall-selection information
 
@@ -42,198 +61,299 @@ When you select or refine a wall, Vicoart may process information such as:
 - image dimensions;
 - wall-selection masks;
 - wall boundaries;
-- information required to generate the requested preview.
+- image-derived identifiers;
+- information required to identify and process the selected wall.
 
-This information is used only to provide the wall-selection and visualisation features.
+### Generated previews and project information
 
-### Generated previews
+Vicoart may create and process:
 
-Vicoart creates wall masks and decorative-finish preview images as part of its core functionality.
+- wall masks;
+- decorative-finish previews;
+- project names;
+- finish selections;
+- saved project variations;
+- locally managed project images;
+- local project records.
 
-Saved projects and previews are stored locally on the user's device.
+Saved projects and their durable project media are primarily stored locally on the user's device.
 
 ## 3. How Information Is Used
 
-Information processed by Vicoart is used to:
+Vicoart processes information as necessary to:
 
-- identify the wall selected by the user;
-- improve the accuracy of wall selection;
-- generate realistic decorative-finish previews;
+- create and manage user accounts;
+- authenticate users;
+- provide email confirmation;
+- maintain and restore authentication sessions;
+- provide password-recovery functionality;
+- provide account-deletion functionality;
+- identify and refine selected walls;
+- provide AI-assisted wall segmentation;
+- generate decorative-finish previews;
 - display Before and After results;
-- save projects and variations on the user's device;
-- allow users to revisit previously saved projects;
-- maintain the security and reliability of the service.
+- save and reopen projects and variations locally;
+- maintain the security and reliability of the service;
+- prevent misuse and control access to service infrastructure;
+- respond to support and privacy requests.
 
 Vicoart does not use room photographs for advertising.
 
 Vicoart does not sell personal information.
 
-## 4. Local Storage
+## 4. Account Authentication
 
-Project information is primarily stored locally on the user's device.
+Vicoart uses **Supabase** to provide user authentication and account-management services.
+
+Authentication processing may include your email address, user identifier, authentication and session information, email-confirmation status, and information required to provide password recovery and account security.
+
+Passwords are handled by Supabase Auth. According to Supabase's current documentation, passwords are stored as cryptographic hashes rather than as plain-text passwords.
+
+Vicoart uses authentication information to provide account creation, email confirmation, sign-in, session management, password recovery, sign-out and account deletion.
+
+Supabase may process this information as a service provider supporting Vicoart's authentication infrastructure.
+
+## 5. Transactional Account Emails
+
+Vicoart uses **Resend** as part of its transactional email infrastructure for account-related communications, including account confirmation and password-recovery emails.
+
+Information necessary to deliver these messages, such as the recipient email address and email-related technical information, may be processed by Resend.
+
+According to Resend's current published GDPR information, email and log data is retained for 30 days on its Free, Pro and Scale plans, while different or configurable retention arrangements may apply to Enterprise services.
+
+These retention practices are controlled by Resend and may change over time.
+
+## 6. Local Project Storage
+
+Vicoart stores project information primarily on the user's device.
 
 This may include:
 
 - project names;
-- selected room images;
+- locally managed copies of project images;
 - wall-selection masks;
 - generated previews;
 - finish selections;
-- saved project variations.
+- saved project variations;
+- local project database records.
 
-Vicoart currently does not provide cloud project synchronisation.
+Vicoart does not currently provide cloud project synchronisation.
 
-The application also excludes Vicoart project data from normal Android backup mechanisms where technically supported.
+Local Vicoart projects are stored on the device rather than as cloud projects attached to a Vicoart account. Users should therefore not assume that signing into the same account on another device will restore their locally saved projects.
 
-## 5. Image Processing and External Service Providers
+Vicoart uses Android backup and device-transfer exclusions for specified Vicoart project data where supported. However, backup and transfer behaviour may also depend on the Android version, device manufacturer and backup or transfer mechanism.
 
-Some Vicoart features require temporary off-device processing.
+## 7. Image Processing and Service Providers
 
-### Vicoart backend
+Some Vicoart functionality requires off-device processing.
 
-Images required for wall selection and preview processing are transmitted over encrypted HTTPS connections to the Vicoart backend.
+### Vicoart backend and Render
 
-The current Vicoart backend is hosted using Render infrastructure.
+Images and related information required for wall selection and preview processing may be transmitted over encrypted HTTPS connections to the Vicoart backend.
 
-The current service deployment is located in **Oregon, United States**.
+The current Vicoart backend uses **Render** infrastructure.
+
+The backend processes information required to provide wall selection, preview generation and related technical functionality.
 
 ### Replicate
 
-Vicoart uses Replicate to run the wall-selection AI model used by the application.
+Vicoart uses **Replicate** to provide AI-assisted wall segmentation.
 
-For this purpose, a sanitised version of the image and wall-selection instructions may be transmitted to Replicate.
+For this purpose, a sanitised processing copy of a room image and information necessary to identify the selected wall may be transmitted to Replicate.
 
-According to Replicate's current documentation, for predictions created through its API, input parameters, output values, output files, and logs are automatically removed after approximately one hour by default.
+According to Replicate's current documentation, for predictions created through its API, input parameters, output values, output files and logs are automatically removed after one hour by default.
 
-Replicate is used for processing required to provide Vicoart's wall-selection functionality.
+Vicoart does not rely on Replicate as permanent storage for users' Vicoart projects.
 
-## 6. Temporary Backend Data
+### Supabase
 
-Vicoart's backend may temporarily create processing files such as:
+Vicoart uses **Supabase** for authentication and account-management infrastructure.
 
-- wall masks;
+Supabase may process account identifiers, email addresses, authentication and session information, and other information required to provide these services.
+
+### Resend
+
+Vicoart uses **Resend** for transactional account email delivery.
+
+Resend may process email addresses and technical information necessary to send and operate account-related emails.
+
+## 8. Temporary Backend Processing
+
+The Vicoart backend may temporarily hold processing information such as:
+
+- wall selections;
+- masks;
 - preview images;
-- intermediate processing data.
+- intermediate processing information.
 
-These files are intended to be temporary rather than permanent project storage.
+The backend is designed around temporary processing rather than permanent server-side project storage.
 
-The current backend uses a logical temporary-media expiry period of approximately 15 minutes, with cleanup occurring as part of the service's temporary-media management process.
+The current backend uses a nominal expiry period of approximately 15 minutes for certain temporary selections, masks and previews.
 
-Because infrastructure cleanup may not occur at the exact expiry second, Vicoart does not represent the 15-minute period as a guaranteed physical deletion deadline.
+This period should not be interpreted as a guarantee that every technical copy is physically deleted at the exact expiry second. Infrastructure cleanup, active requests, crashes, provider processing and other technical processes may affect the exact timing of physical deletion.
 
-## 7. Data Sharing
+Saved project copies stored locally on the user's device are separate from this temporary backend processing.
 
-Vicoart does not sell user data and does not share information with advertisers.
+## 9. Data Sharing
 
-Information may be transmitted to service providers when necessary to operate the application, including:
+Vicoart does not sell personal data and does not share user information with advertisers.
 
-- **Render**, for backend infrastructure;
-- **Replicate**, for AI wall-selection processing.
+Information may be processed by service providers where necessary to operate Vicoart, including:
 
-These providers process information as part of delivering the technical services required by Vicoart.
+- **Supabase** — authentication and account management;
+- **Resend** — transactional account email delivery;
+- **Render** — Vicoart backend infrastructure;
+- **Replicate** — AI-assisted wall segmentation.
 
-Because these services may process data in the United States, information used for these functions may be processed outside the United Kingdom.
+These providers process information in connection with the technical services they provide.
 
-## 8. Analytics, Advertising and Tracking
+Vicoart may change or replace infrastructure providers as the service develops. Material changes affecting how personal information is processed will be reflected in this Privacy Policy where required.
 
-The current version of Vicoart does not include:
+## 10. International Processing
 
-- advertising;
-- advertising SDKs;
-- behavioural tracking;
-- third-party marketing analytics;
-- cross-app tracking.
+Some service providers used by Vicoart may process information outside the United Kingdom.
 
-Vicoart does not use room photographs to build advertising profiles.
+Where applicable, Vicoart will seek to maintain appropriate arrangements for international processing in accordance with applicable data-protection requirements.
 
-## 9. Accounts
+Users should be aware that information processed by infrastructure and technology providers may be processed in countries different from their country of residence.
 
-The current version of Vicoart does not require or provide user account registration.
+## 11. Advertising, Analytics and Tracking
 
-Vicoart therefore does not currently collect usernames, account passwords, or account-profile information as part of the app experience.
+The current version of Vicoart does not include advertising.
 
-If account functionality is introduced in a future version, this Privacy Policy will be updated before that functionality is released.
+Vicoart does not use room photographs to create advertising profiles.
 
-## 10. Payments
+The current Vicoart application does not use room photographs for behavioural advertising or cross-app advertising tracking.
 
-The current version of Vicoart does not process payments or subscriptions within the application.
+If Vicoart introduces advertising, marketing analytics or materially different tracking technologies in the future, this Privacy Policy will be updated where required.
 
-If paid functionality is introduced later, this Privacy Policy will be updated where necessary.
+## 12. Payments, Trials and Subscriptions
 
-## 11. Deleting Your Projects
+The current version of Vicoart does not provide subscription billing, trial entitlements or per-user paid-generation quotas.
 
-Vicoart provides a **Delete Project** function.
+If paid functionality, subscriptions or other payment features are introduced in the future, relevant privacy information will be updated where necessary.
 
-Deleting a project removes the Vicoart-managed local project data associated with that project, including applicable:
+## 13. Deleting a Project
 
-- saved preview images;
-- locally stored project images;
-- wall-selection masks;
+Vicoart provides functionality to delete locally saved projects.
+
+Deleting a project is designed to remove Vicoart-managed local project data associated with that project, including applicable:
+
 - project records;
-- project variations.
+- locally managed project images;
+- wall-selection masks;
+- generated previews;
+- saved project variations.
 
-Deleting a Vicoart project does **not** delete the original photograph from your device's photo gallery.
+Deleting a Vicoart project does **not** delete the original photograph stored independently in the user's device gallery.
 
-Temporary data that has already been transmitted to infrastructure providers is subject to the temporary-processing and retention practices described in this Privacy Policy.
+Temporary information that has already been transmitted for backend or provider processing remains subject to the applicable temporary-processing and retention practices described in this Privacy Policy.
 
-## 12. Data Security
+## 14. Deleting Your Vicoart Account
 
-Vicoart uses technical measures intended to protect data during processing.
+Vicoart provides an in-app **Delete Account** function.
+
+When remote account deletion is successfully confirmed, Vicoart's deletion process is designed to:
+
+- delete the authenticated Vicoart account from the account service;
+- remove Vicoart-managed local projects and associated locally managed project media;
+- clear applicable local authentication-session information;
+- complete the local privacy-cleanup process.
+
+Vicoart's deletion process is deliberately ordered so that local cleanup associated with account deletion follows confirmation of remote account deletion.
+
+If deletion is interrupted or its remote result cannot be confirmed, Vicoart uses privacy barriers and recovery handling rather than representing an uncertain deletion as successfully completed.
+
+Deleting a Vicoart account does not delete original photographs stored independently in the user's device gallery.
+
+Information already processed by infrastructure providers may remain subject to applicable technical, security, backup, legal or retention processes.
+
+Users who cannot access the Vicoart application can find account-deletion instructions and request assistance here:
+
+**[Delete Your Vicoart Account](https://privacy.vicoart.com/delete-account/)**
+
+## 15. Data Retention
+
+Vicoart aims to retain personal information only for as long as necessary for the purposes described in this Privacy Policy, subject to applicable legal, security and technical requirements.
+
+Account information is processed through Supabase for as long as necessary to provide and secure the user's Vicoart account, unless the account is deleted or retention is otherwise required.
+
+Saved Vicoart projects and associated project media are primarily stored locally on the user's device rather than in a Vicoart cloud project-storage service.
+
+Backend wall-selection, mask and preview processing information is intended to be temporary rather than permanent project storage.
+
+According to Replicate's current published documentation, input parameters, output values, output files and logs associated with API predictions are automatically removed after one hour by default.
+
+According to Resend's current published GDPR information, email and log data is retained for 30 days on its Free, Pro and Scale plans, with different or configurable arrangements potentially applying to Enterprise services.
+
+Third-party service providers may maintain additional security, backup or legally required records in accordance with their applicable terms, policies and legal obligations.
+
+## 16. Data Security
+
+Vicoart uses technical measures intended to reduce privacy and security risks.
 
 These include:
 
-- encrypted HTTPS connections for backend communications;
+- encrypted HTTPS communication with the Vicoart backend;
 - sanitisation of photographs before upload;
-- removal of EXIF/GPS metadata from uploaded processing copies;
-- restricted application storage;
-- separation of development and production configuration;
-- controls designed to limit unauthorised backend use.
+- removal of source metadata from uploaded processing copies;
+- controlled local application storage;
+- authentication and session controls;
+- authenticated account deletion;
+- restricted backend operations;
+- rate and provider-use protections;
+- separation of development and staging configuration;
+- Android backup and device-transfer exclusions for specified project data.
 
-No internet-based service can guarantee absolute security, but Vicoart aims to minimise the amount of information transmitted and retained.
+No internet-connected service can guarantee absolute security.
 
-## 13. International Processing
+Vicoart therefore aims to minimise the information transmitted and retained and to limit processing to information required to provide and protect the service.
 
-Certain processing services used by Vicoart operate outside the United Kingdom, including infrastructure located in the United States.
-
-As Vicoart develops its public production infrastructure, its international data-transfer arrangements and service-provider agreements will be maintained in accordance with applicable data-protection requirements.
-
-## 14. Children's Privacy
+## 17. Children's Privacy
 
 The current Vicoart beta service is intended for users aged **18 and over**.
 
 Vicoart does not knowingly seek to collect personal information from children through the current beta service.
 
-If Vicoart becomes aware that information has been submitted contrary to this restriction, appropriate steps will be taken in accordance with applicable law.
+If Vicoart becomes aware that personal information has been submitted contrary to this restriction, appropriate steps will be considered in accordance with applicable law.
 
-## 15. Your Privacy Rights
+## 18. Your Privacy Rights
 
-Depending on applicable data-protection law, users may have rights concerning personal data, including rights relating to access, correction, deletion, restriction, or objection to certain processing.
+Depending on applicable data-protection law, users may have rights concerning their personal data, including rights relating to:
 
-Because the current Vicoart application stores most project information locally and does not use user accounts, Vicoart may not be able to associate server-side temporary processing data with a specific individual after processing has completed.
+- access;
+- correction;
+- deletion;
+- restriction of processing;
+- objection to certain processing;
+- data portability where applicable;
+- withdrawal of consent where processing relies on consent;
+- making a complaint to an appropriate data-protection authority.
 
 Privacy questions or requests can be sent to:
 
 **privacy@vicoart.com**
 
-## 16. Changes to This Privacy Policy
+Because Vicoart stores projects primarily on the user's device and uses temporary backend processing, Vicoart may not always be able to associate every temporary processing object with a particular individual after processing has ended.
+
+## 19. Changes to This Privacy Policy
 
 Vicoart may update this Privacy Policy when:
 
 - application functionality changes;
-- new processors or infrastructure providers are introduced;
-- account, payment, or cloud functionality is added;
+- authentication or account functionality changes;
+- service providers or infrastructure change;
+- payments, subscriptions or cloud functionality are introduced;
+- data-processing practices change;
 - legal or regulatory requirements change.
 
-The effective date at the top of this policy will be updated when material changes are made.
+The effective date at the top of this Privacy Policy will be updated when material changes are made.
 
-## 17. Contact
+## 20. Contact
 
 **Vicoart**
 
-Operator: **Cristian Dumitrache, United Kingdom**
-
-Privacy: **privacy@vicoart.com**
-
-Support: **support@vicoart.com**
-
-Website: **vicoart.com**
+**Operator:** Cristian Dumitrache, United Kingdom  
+**Privacy:** privacy@vicoart.com  
+**Support:** support@vicoart.com  
+**Website:** vicoart.com
