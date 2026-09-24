@@ -137,9 +137,13 @@ This may include:
 - saved project variations;
 - local project database records.
 
-Vicoart does not currently provide cloud project synchronisation.
+Saved projects remain on the device and are not synchronised through a Vicoart cloud project-storage service.
 
-Local Vicoart projects are stored on the device rather than as cloud projects attached to a Vicoart account. Users should therefore not assume that signing into the same account on another device will restore their locally saved projects.
+In versions supporting local account separation, new projects and explicitly imported project copies are associated with the signed-in account within the active local workspace. Normal project screens show that account's projects, not projects associated with another account on the same device. Signing out does not delete those projects. Signing in on another device does not restore them.
+
+Older projects without an account association are not automatically assigned to the next person who signs in. Where the recovery feature is available, users must confirm permission to inspect them and separately confirm importing a copy. Importing preserves the unassigned original and its media. This permission confirmation does not independently verify historical ownership.
+
+This separation is enforced by the application. It is not encryption of local project files or protection against unrestricted access to the device's storage.
 
 Vicoart uses Android backup and device-transfer exclusions for specified Vicoart project data where supported. However, backup and transfer behaviour may also depend on the Android version, device manufacturer and backup or transfer mechanism.
 
@@ -235,17 +239,9 @@ If paid functionality, subscriptions or other payment features are introduced in
 
 ## 13. Deleting a Project
 
-Vicoart provides functionality to delete locally saved projects.
+You can delete projects available to your signed-in account in My Projects. Deletion removes the selected project's local record and is designed to remove its Vicoart-managed images, wall masks, previews and saved variations. It does not delete another account's projects or original photographs stored independently in your gallery.
 
-Deleting a project is designed to remove Vicoart-managed local project data associated with that project, including applicable:
-
-- project records;
-- locally managed project images;
-- wall-selection masks;
-- generated previews;
-- saved project variations.
-
-Deleting a Vicoart project does **not** delete the original photograph stored independently in the user's device gallery.
+Deleting an imported legacy project copy does not delete the preserved unassigned original. If media removal is interrupted or fails, files may remain in deletion quarantine while recovery retries cleanup. Disappearance from My Projects does not guarantee immediate physical removal of every associated file.
 
 Temporary information that has already been transmitted for backend or provider processing remains subject to the applicable temporary-processing and retention practices described in this Privacy Policy.
 
@@ -253,19 +249,11 @@ Temporary information that has already been transmitted for backend or provider 
 
 Vicoart provides an in-app **Delete Account** function.
 
-When remote account deletion is successfully confirmed, Vicoart's deletion process is designed to:
+Delete Account requests deletion of the authenticated Vicoart account. Once remote deletion is confirmed, automatic local cleanup targets only the account and local workspace recorded for that deletion on this device. It is designed to remove that partition's projects and associated durable media and clear the local authentication session. It preserves other accounts' local projects, unassigned legacy originals, previously retained legacy workspaces and original gallery photographs.
 
-- delete the authenticated Vicoart account from the account service;
-- remove Vicoart-managed local projects and associated locally managed project media;
-- clear applicable local authentication-session information;
-- complete the local privacy-cleanup process.
+If deletion is interrupted, Vicoart retains recovery information and restricts access until the applicable recovery steps complete. Where the remote result is uncertain and the local target is known, the user may explicitly choose local cleanup; completing that cleanup does not establish that the remote account was deleted.
 
-Vicoart's deletion process is deliberately ordered so that local cleanup associated with account deletion follows confirmation of remote account deletion.
-
-If deletion is interrupted or its remote result cannot be confirmed, Vicoart uses privacy barriers and recovery handling rather than representing an uncertain deletion as successfully completed.
-
-Deleting a Vicoart account does not delete original photographs stored independently in the user's device gallery.
-
+An older interrupted deletion may not identify an account safely. Where the app offers the confirmed option to keep unidentified data quarantined and sign out, it retains the old local workspace and unresolved deletion record rather than guessing ownership or erasing all device data. Subsequent sign-ins cannot access that retained workspace through normal project screens. This action does not itself delete the remote account. The current app provides no restore, export or device-wide erase action for that retained workspace.
 Information already processed by infrastructure providers may remain subject to applicable technical, security, backup, legal or retention processes.
 
 Users who cannot access the Vicoart application can find account-deletion instructions and request assistance here:
@@ -278,7 +266,9 @@ Vicoart aims to retain personal information only for as long as necessary for th
 
 Account information is processed through Supabase for as long as necessary to provide and secure the user's Vicoart account, unless the account is deleted or retention is otherwise required.
 
-Saved Vicoart projects and associated project media are primarily stored locally on the user's device rather than in a Vicoart cloud project-storage service.
+Local projects normally remain on the device across sign-out and restart until removed through an applicable deletion action. Unassigned legacy originals remain after import, and previously quarantined legacy workspaces remain after subsequent account deletion in a new workspace. The app does not currently implement an automatic expiry or a user-facing erase action for those retained legacy workspaces.
+
+Failed project-media cleanup and interrupted import copies may remain pending recovery. Recovery distinguishes unpublished import copies from preserved originals and successfully saved projects. Historical shared temporary files without reliable account attribution are not automatically erased during account deletion; age-based startup cleanup may apply, but is restricted in protected recovery states. Vicoart does not guarantee immediate account-attributed removal of every historical temporary file.
 
 Backend wall-selection, mask and preview processing information is intended to be temporary rather than permanent project storage.
 
